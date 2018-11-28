@@ -1,0 +1,149 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: "FortniteFont";
+    src:url("./fonts/fortnite.ttf");
+}
+
+h1 {
+    font-family: FortniteFont;
+    font-size: 90px;
+} 
+
+div {
+    padding-bottom: 15px;
+}
+
+#logo {
+    height: 55px;
+    width: 55;
+    padding-top: 5px;
+    padding-left: 5px;
+    float:left;
+}
+
+nav:nth-child(1) {
+    padding-left: 25px;
+}
+
+.navlink {
+    padding: 5px;
+    padding-top: 12px;
+    padding-left: 20px;
+    color: white;
+    font-size: 1.3em;
+    float: left;
+}
+
+.skinForm {
+    padding-top: 50px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    width: 500px;
+}
+
+.makeSkinDelete {
+    transition: background-color 0.4s ease;
+    width: 100px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+.makeSkinDelete:link, .makeSkinDelete:visited, .makeSkinDelete:hover, .makeSkinDelete:active {
+    color: black;
+    background-color: white;
+}
+
+.makeSkinDelete:hover {
+    transition: background-color 0.4s ease;
+    background-color: #dcdcdc;
+}
+
+.mainForm {
+    height: 300px;
+    width: 350px;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: 1.2em;
+}
+
+.input-field.col label {
+    left: 0;
+}
+
+.infoCollapse {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#errorMessage {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+    margin: 0 auto;
+}
+
+#skin {
+    z-index: 225;
+    margin-top: -20px;
+    margin-left: 135px;
+    height: 450px;
+    width: 300px;
+    -ms-transform: rotate(330deg);
+    -webkit-transform: rotate(330deg); 
+    transform: rotate(330deg);
+}
+
+#skins {
+    width: 40%;
+    min-width: 400px;
+    border: 2px solid #ba68c8;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.skin {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    border: 2px solid #ba68c8;
+    background-color: #ce93d8;
+    padding: 10px;
+    min-height:60px;
+    overflow: hidden;
+    font-weight: bold;
+    letter-spacing: .75px;
+}
+
+.skin:hover {
+    transition: border-color 0.2s ease-out;
+    border-color: rgba(0,0,0, 1);
+    transition: background-color .5s ease-out;
+    background-color: #ba68c8;
+}
+
+img.default {
+    height: 80px;
+    width: 80px;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top:10px;
+}
+
+.skin:first-child {
+    margin-top: 10px;
+}
+
+.skin:last-child {
+    margin-bottom:10px;
+}

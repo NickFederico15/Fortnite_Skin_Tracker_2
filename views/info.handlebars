@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Fortnite Skin Tracker</title>
+  <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+  <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css"  media="screen,projection"/>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+</head>
+<body>
+  <nav class="purple lighten-2">
+    <div class="nav-wrapper">
+      <a href="/login"><img id="logo" src="/assets/img/fortniteLogo.png" alt="fortnite logo"/></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/maker">Add Skin</a></li>
+        <li><a href="/skins">My Skins</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h1 class="center-align">Fortnite Skin Tracker</h1>
+    <ul class="collapsible infoCollapse">
+        <li>
+            <div class="collapsible-header">Description</div>
+            <div class="collapsible-body"><span>This application is used to keep track of all the skins that you own in Fortnite: Battle Royale.
+                Are you the ultimate collector? </span></div>
+        </li>
+        <li>
+            <div class="collapsible-header">How to Use</div>
+            <div class="collapsible-body">
+                <span>
+                    <h5>Creating an Account</h5>
+                    <ul>
+                      <li>"Sign Up" - allows you to create an account using a Username and Password (Passwords must match!)</li>
+                      <li>"Login Page" - allows you to login using the Username and Password you created</li>
+                    </ul>
+                    <h5>Using the App</h5>
+                    <ul>
+                      <li>"Add Skin" - allows you to fill out a form to add a skin into your collection (All fields are required!)</li>
+                      <li>"My Skins" - shows you all of the skins that you've added</li>
+                      <li>"Info" - brings you back here :)</li>
+                    </ul>
+                </span>
+            </div>
+        </li>
+    </ul>
+  </div>
+  <script src="/assets/bundle.js"></script>
+</body>
+</html>
