@@ -82,6 +82,15 @@ AccountModel.findByUsername(username, (err, doc) => {
   });
 });
 
+AccountSchema.statics.updateAccountByID = (id, doc, callback) => {
+  const search = {
+    _id: id,
+  };
+
+  return AccountModel.findOneAndUpdate(search,
+    { salt: doc.salt, password: doc.password }, callback);
+};
+
 AccountModel = mongoose.model('Account', AccountSchema);
 
 module.exports.AccountModel = AccountModel;

@@ -9,6 +9,8 @@ const router = (app) => {
   app.get('/signup', mid.requiresSecure, mid.requiresLogout, controllers.Account.signupPage);
   app.post('/signup', mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
+  app.get('/changePassword', mid.requiresSecure, mid.requiresLogin,
+          controllers.Account.passwordPage);
   app.get('/maker', mid.requiresLogin, controllers.Skin.makerPage);
   app.post('/maker', mid.requiresLogin, controllers.Skin.make);
   app.delete('/deleteSkin', mid.requiresLogin, controllers.Skin.deleteSkin);
@@ -16,6 +18,8 @@ const router = (app) => {
   app.get('/info', mid.requiresSecure, controllers.Skin.infoPage);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/*', mid.requiresSecure, mid.requiresSecure, controllers.Account.notFoundPage);
+  app.put('/changePassword', mid.requiresSecure, mid.requiresLogin,
+          controllers.Account.changePassword);
 };
 
 module.exports = router;

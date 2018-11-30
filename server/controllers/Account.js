@@ -12,6 +12,10 @@ const signupPage = (req, res) => {
   res.render('signup', { csrfToken: req.csrfToken() });
 };
 
+const passwordPage = (req, res) => {
+  res.render('changePassword', { csrfToken: req.csrfToken() });
+};
+
 // handles logout
 const logout = (req, res) => {
   req.session.destroy();
@@ -90,6 +94,36 @@ const signup = (request, response) => {
   });
 };
 
+const changePassword = (request, response) => {
+  const req = request;
+  const res = response;
+
+  req.body.oldPass = `${req.body.oldPass}`;
+  req.body.pass = `${req.body.pass}`;
+  req.body.pass2 = `${req.body.pass2}`;
+
+  return Account.AccountModel.authenticate(
+      req.session.account.username, req.body.oldPass, (err, doc) => {
+        if (err || !doc) {
+          return res.status(401).json({ error: 'Old password is not correct.' });
+        }
+
+        return Account.AccountModel.generateHash(req.body.pass, (salt, hash) => {
+          const updatedData = {
+            salt,
+            password: hash,
+          };
+
+          return Account.AccountModel.updateAccountByID(
+              req.session.account._id,
+              updatedData, (err2, doc2) => {
+                if (err2 || !doc2) return res.status(400).json({ error: 'An error occured' });
+                return res.status(204).json();
+              });
+        });
+      });
+};
+
 const getToken = (request, response) => {
   const req = request;
   const res = response;
@@ -109,8 +143,10 @@ const notFound = (request, response) => {
 // exports
 module.exports.loginPage = loginPage;
 module.exports.login = login;
+module.exports.passwordPage = passwordPage;
 module.exports.logout = logout;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
+module.exports.changePassword = changePassword;
 module.exports.getToken = getToken;
 module.exports.notFoundPage = notFound;
