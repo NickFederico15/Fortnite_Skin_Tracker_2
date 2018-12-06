@@ -36,8 +36,6 @@ var handleLogin = function handleLogin(e) {
   }
 
   console.log($("input[name=_csrf]").val());
-  
-  M.toast({html: 'Login Success!', displayLength: 2500});
     
   // sends request to login user
   sendAjax('POST', $("#loginForm").attr("action"), $("#loginForm").serialize(), redirect);
@@ -60,8 +58,6 @@ var handleSignup = function handleSignup(e) {
     M.toast({html: 'Passwords do not match!', displayLength: 2500});
     return false;
   }
-
-  M.toast({html: 'Account Created!', displayLength: 2500});
    
   // sends request to create account
   sendAjax('POST', $("#signupForm").attr("action"), $("#signupForm").serialize(), redirect);

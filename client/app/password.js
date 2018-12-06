@@ -3,12 +3,12 @@ const handleChange = (e) => {
   e.preventDefault();
     
   if($("#oldPass").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
-    handleError("All fields are required!");
+    M.toast({html: 'All fields are required!'});
     return false;
   }
     
   if($("#pass").val() !== $("#pass2").val()) {
-    handleError("Passwords do not match!");
+    M.toast({html: 'Passwords do not match!'});
     return false;
   }
 
@@ -27,20 +27,22 @@ const PasswordChangePage = (props) => {
         method="PUT" 
         className="mainForm"
     >
-      <div className="form-group row">
+      <div className="input-field col s6">
         <label htmlFor="oldPass">Current Password: </label>
         <input className="form-control" id="oldPass" type="password" name="oldPass" placeholder="Old Password"/>
       </div>
-      <div className="form-group row">
+      <div className="input-field col s6">
         <label htmlFor="pass">New Password: </label>
         <input className="form-control" id="pass" type="password" name="pass" placeholder="New Password"/>
       </div>
-      <div className="form-group row">
+      <div className="input-field col s6">
         <label htmlFor="pass2">Confirm New Password: </label>
         <input className="form-control" id="pass2" type="password" name="pass2" placeholder="Confirm Password"/>
       </div>
-      <input type="hidden" id="token" name="_csrf" value={props.csrf}/>
-      <button className="btn btn-primary" type="submit">Change Password</button>
+      <div className="container center-align">
+        <input type="hidden" id="token" name="_csrf" value={props.csrf}/>
+        <button className="btn purple lighten-2" type="submit">Change Password</button>
+      </div>
     </form>
   );
 };
@@ -48,7 +50,7 @@ const PasswordChangePage = (props) => {
 const SuccessWindow = () =>{
   return(
     <div class="center-align">
-        <p>Password change successful!!</p>
+        <p>Password change successful!</p>
     </div>
   );
 };

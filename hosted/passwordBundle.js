@@ -29,12 +29,12 @@ var handleChange = function handleChange(e) {
   e.preventDefault();
     
   if ($("#oldPass").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
-    handleError("All fields are required!");
+    M.toast({html: 'All fields Required!', displayLength: 2500});
     return false;
   }
 
   if ($("#pass").val() !== $("#pass2").val()) {
-    handleError("Passwords do not match!");
+    M.toast({html: 'Passwords do not match!', displayLength: 2500});
     return false;
   }
 
@@ -57,35 +57,39 @@ var PasswordChangePage = function PasswordChangePage(props) {
     },
     React.createElement(
       "div",
-      { className: "form-group row" },
-      React.createElement("label", { htmlFor: "oldPass" }, "Current Password: "),
-      React.createElement("input", { className: "form-control", id: "oldPass", type: "password", name: "oldPass", placeholder: "Old Password" })
+      { className: "input-field col s6" },
+      React.createElement("label", { htmlFor: "oldPass" }, "Current Password"),
+      React.createElement("input", { className: "form-control", id: "oldPass", type: "password", name: "oldPass"})
     ),
     React.createElement(
       "div",
-      { className: "form-group row" },
-      React.createElement("label", { htmlFor: "pass" }, "New Password: "),
-      React.createElement("input", { className: "form-control", id: "pass", type: "password", name: "pass", placeholder: "New Password" })
+      { className: "input-field col s6" },
+      React.createElement("label", { htmlFor: "pass" }, "New Password"),
+      React.createElement("input", { className: "form-control", id: "pass", type: "password", name: "pass"})
     ),
     React.createElement(
       "div",
-      { className: "form-group row" },
-      React.createElement("label", { htmlFor: "pass2" }, "Confirm New Password: "),
-      React.createElement("input", { className: "form-control", id: "pass2", type: "password", name: "pass2", placeholder: "Confirm Password" })
+      { className: "input-field col s6" },
+      React.createElement("label", { htmlFor: "pass2" }, "Confirm New Password"),
+      React.createElement("input", { className: "form-control", id: "pass2", type: "password", name: "pass2"})
     ),
-    React.createElement("input", { type: "hidden", id: "token", name: "_csrf", value: props.csrf }),
-    React.createElement("button", { className: "btn btn-primary", type: "submit" }, "Change Password")
+    React.createElement(
+      "div", 
+      { className: "container center-align"}, 
+      React.createElement("input", { type: "hidden", id: "token", name: "_csrf", value: props.csrf }),
+      React.createElement("button", { className: "btn purple lighten-2", type: "submit"}, "Change Password")
+    )
   );
 };
 
 var SuccessWindow = function SuccessWindow() {
   return React.createElement(
     "div",
-    { class: "center-align" },
+    { class: "container center-align" },
     React.createElement(
-      "p",
-      null,
-      "Password change successful!!"
+        "center",
+        null,
+        React.createElement("h1", { id: "passChangeSuccess" }, "Password change successful!")
     )
   );
 };

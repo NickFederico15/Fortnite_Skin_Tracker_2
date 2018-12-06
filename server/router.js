@@ -16,6 +16,7 @@ const router = (app) => {
   app.delete('/deleteSkin', mid.requiresLogin, controllers.Skin.deleteSkin);
   app.get('/skins', mid.requiresLogin, controllers.Skin.skinPage);
   app.get('/info', mid.requiresSecure, controllers.Skin.infoPage);
+  app.get('/accountPage', mid.requiresSecure, controllers.Account.accountPage);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/*', mid.requiresSecure, mid.requiresSecure, controllers.Account.notFoundPage);
   app.put('/changePassword', mid.requiresSecure, mid.requiresLogin,
