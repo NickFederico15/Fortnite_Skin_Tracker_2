@@ -46,7 +46,7 @@ var SkinList = function SkinList(props) {
       React.createElement(
         "div", 
         { className: "container center-align"}, 
-        React.createElement("h4", { className: "emptySkin" }, "No Skins Yet"),
+        React.createElement("h3", { className: "emptySkin" }, "No Skins Yet"),
       ),
     );
   }
