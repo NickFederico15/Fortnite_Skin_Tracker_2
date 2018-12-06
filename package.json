@@ -10,9 +10,11 @@
   "scripts": {
     "buildLoginBundle": "babel ./client/login ./client/helper --presets react --out-file ./hosted/loginBundle.js",
     "buildAppBundle": "babel ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
-    "build": "npm run buildLoginBundle && npm run buildAppBundle",
+    "buildAnalyticsBundle": "babel ./client/app/analyticsMaker.js ./client/helper --presets react --out-file ./hosted/analyticsBundle.js",
+    "build": "npm run buildLoginBundle && npm run buildAppBundle && npm run buildAnalyticsBundle",
     "watchLoginBundle": "babel --watch ./client/login ./client/helper --presets react --out-file ./hosted/loginBundle.js",
     "watchAppBundle": "babel --watch ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
+    "watchStatsBundle": "babel --watch ./client/app/analyticsMaker.js ./client/helper --presets react --out-file ./hosted/analyticsBundle.js",
     "nodemon": "nodemon --watch ./server ./server/app.js",
     "start": "node ./server/app.js",
     "pretest": "eslint ./server --fix",
@@ -28,6 +30,7 @@
   "license": "Apache 2.0",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "chart.js": "^2.7.3",
     "compression": "^1.6.1",
     "connect-redis": "^3.0.2",
     "cookie-parser": "^1.3.3",

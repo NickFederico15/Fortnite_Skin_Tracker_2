@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
   <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/assets/js/Chart.min.js"></script>
   <link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css"  media="screen,projection"/>
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
@@ -28,10 +29,9 @@
     </div>
   </nav>
   <div class="container">
-    <h1 class="center-align">My Account</h1>
-    <section id="content"></section>
-    <center><a href="/changePassword" class="center-align" id="passChange">Change Password</a></center>
+    <h1 class="center-align">Analytics</h1>
+    <canvas id="chart" width="1000" height="500"></canvas>
   </div>
-  <script src="/assets/myAccountBundle.js"></script>
+  <script src="/assets/analyticsBundle.js"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ const router = (app) => {
   app.post('/maker', mid.requiresLogin, controllers.Skin.make);
   app.delete('/deleteSkin', mid.requiresLogin, controllers.Skin.deleteSkin);
   app.get('/skins', mid.requiresLogin, controllers.Skin.skinPage);
+  app.get('/analytics', mid.requiresLogin, controllers.Analytics.analyticsPage);
   app.get('/info', mid.requiresSecure, controllers.Skin.infoPage);
   app.get('/accountPage', mid.requiresSecure, controllers.Account.accountPage);
   app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
