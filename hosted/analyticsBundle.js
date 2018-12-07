@@ -25,18 +25,22 @@ var sendAjax = function sendAjax(type, action, data, success) {
   });
 };
 
+// create the canvas for charts
 var ChartCanvas = function ChartCanvas(props) {
     return React.createElement("canvas", { id: "chart", width: "1000", height: "500" });
 };
 
+// renders the chart and loads the skin data
 var createBarChartCanvas = function createBarChartCanvas(data) {
     ReactDOM.render(React.createElement(ChartCanvas, null), document.querySelector("#charts"));
  
     loadSkinsFromServer();
 };
 
+// creates the bar chart
 const createBarChart = (ctx, data) => {
 
+  // stores the labels and the data
   var labels = [];
   var vbuckData = [ 0, 0, 0, 0, 0, 0 ];
 
@@ -70,23 +74,47 @@ const createBarChart = (ctx, data) => {
   const lineChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: labels,
-        datasets: [{
-            data: vbuckData
-        }]
+      labels: labels,
+      datasets: [{
+        data: vbuckData,
+        borderColor: '#ba68c8',
+        borderWidth: 2,
+        backgroundColor: '#e1bee7'
+      }]
     },
     options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+      scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Number of Skins',
+            fontSize: 15
+          },
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'V-buck Cost',
+            fontSize: 15
+          }
+        }]
+      },
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: 'Value of Owned Skins',
+        fontSize: 28
+      }
     }
   });
 };
 
+// loads skin data from the server
 var loadSkinsFromServer = function loadSkinsFromServer(csrf) {
   sendAjax('GET', '/getSkins', null, function (data) {
     var skinData = data.skins;

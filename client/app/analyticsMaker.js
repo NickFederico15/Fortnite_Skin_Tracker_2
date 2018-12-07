@@ -1,9 +1,11 @@
+// create the canvas for charts
 const ChartCanvas = (props) => {
     return (
         <canvas id="chart" width="1000" height="500"></canvas>
     );
 };
 
+// renders the chart and loads the skin data
 var createBarChartCanvas = function createBarChartCanvas(data) {
     ReactDOM.render(
         <ChartCanvas />,
@@ -13,6 +15,7 @@ var createBarChartCanvas = function createBarChartCanvas(data) {
     loadSkinsFromServer();
 };
 
+// creates the bar chart
 const createBarChart = (ctx, data) => {
 
   var labels = [];
@@ -43,6 +46,7 @@ const createBarChart = (ctx, data) => {
   });
 };
 
+// loads skin data from the server
 var loadSkinsFromServer = function loadSkinsFromServer(csrf) {
   sendAjax('GET', '/getSkins', null, function (data) {
     var skinData = data.skins;

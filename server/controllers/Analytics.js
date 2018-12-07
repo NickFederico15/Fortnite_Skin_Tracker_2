@@ -1,5 +1,5 @@
-// Serves the stats page
+// serves the page
 const analyticsPage = (req, res) => res.render('analytics', { csrfToken: req.csrfToken() });
 
-// Exports
+// export
 module.exports.analyticsPage = analyticsPage;

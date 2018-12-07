@@ -23,7 +23,7 @@ h3 {
 h4 {
     font-family: FortniteFont;
     font-size: 50px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 div {
@@ -58,6 +58,10 @@ nav:nth-child(1) {
     border: 2px solid #ba68c8;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+#changeButton {
+    margin-top: 50px;
 }
 
 #passChangeSuccess{
@@ -132,6 +136,10 @@ nav:nth-child(1) {
     border: 2px solid #ba68c8;
     border-radius: 4px;
     margin: 0 auto;
+    margin-top: 50px;
+}
+
+#charts {
     margin-top: 50px;
 }
 

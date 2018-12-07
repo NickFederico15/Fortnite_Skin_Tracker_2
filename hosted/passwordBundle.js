@@ -25,6 +25,7 @@ var sendAjax = function sendAjax(type, action, data, success) {
   });
 };
 
+// handles the password change inputs
 var handleChange = function handleChange(e) {
   e.preventDefault();
     
@@ -44,7 +45,7 @@ var handleChange = function handleChange(e) {
   return false;
 };
 
-
+// sets up the password change form
 var PasswordChangePage = function PasswordChangePage(props) {
   return React.createElement(
     "form",
@@ -82,6 +83,7 @@ var PasswordChangePage = function PasswordChangePage(props) {
   );
 };
 
+// returns a success message
 var SuccessWindow = function SuccessWindow() {
   return React.createElement(
     "div",

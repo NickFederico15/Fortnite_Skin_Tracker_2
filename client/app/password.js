@@ -1,4 +1,4 @@
-// adds a skin
+// handles the password change inputs
 const handleChange = (e) => {
   e.preventDefault();
     
@@ -18,6 +18,7 @@ const handleChange = (e) => {
   return false;
 };
 
+// sets up the password change form
 const PasswordChangePage = (props) => {
   return (
     <form id="changePassForm" 
@@ -47,6 +48,7 @@ const PasswordChangePage = (props) => {
   );
 };
 
+// returns a success message
 const SuccessWindow = () =>{
   return(
     <div class="center-align">

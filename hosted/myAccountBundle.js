@@ -25,6 +25,7 @@ var sendAjax = function sendAjax(type, action, data, success) {
   });
 };
 
+// renders the account page info
 var AccountData = function AccountData(props) {
   return React.createElement(
     "div",
@@ -33,7 +34,7 @@ var AccountData = function AccountData(props) {
   );
 };
 
-// loads the skins
+// loads the skin data
 var loadSkinsFromServer = function loadSkinsFromServer(csrf) {
   sendAjax('GET', '/getSkins', null, function (data) {
     ReactDOM.render(React.createElement(AccountData, { skins: data.skins, csrf: csrf }), document.querySelector("#content"));
